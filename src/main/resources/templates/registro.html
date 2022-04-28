@@ -1,0 +1,60 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente</title>
+	<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/login}">Logar</a>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container mt-3">
+		<form th:object="${clienteDto}" action="/cliente" method="POST">
+      		<div class="row">
+		        <div class="col-md-6">
+		          <div class="input-group mb-3 input-group-sm">
+		            <span class="input-group-text">Nome</span> <input type="text" th:field="*{nome}" class="form-control" required>
+		          </div>
+		        </div>
+		      </div>
+		
+		      <div class="row">
+		        <div class="col-md-6">
+		          <div class="input-group mb-3 input-group-sm">
+		            <span class="input-group-text">E-mail</span> <input type="text" th:field="*{email}" class="form-control" required>
+		          </div>
+		        </div>
+		      </div>
+		
+		      <div class="row">
+		        <div class="col-md-6">
+		          <div class="input-group mb-3 input-group-sm">
+		            <span class="input-group-text">Senha</span> <input type="password" th:field="*{senha}" class="form-control" required>
+		          </div>
+		        </div>
+		    </div>
+			<input class="btn btn-success" type="submit" value="Salvar" />
+		</form>
+	</div>
+</body>
+</html>
